@@ -9,30 +9,57 @@
 import UIKit
 
 class FoodViewControler: UICollectionViewController {
-    var items: [UIImage]  = [
-        #imageLiteral(resourceName: "meat-0.jpg"), #imageLiteral(resourceName: "peas-0.jpg"),#imageLiteral(resourceName: "peas-1.jpg"), #imageLiteral(resourceName: "meat-1.jpg"), 
-    ]
+    var foods = Food.mocks
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionViewLayout.delegate
+        
+        collectionView.register(
+            UICollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "filterBar"
+        )
+    }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return foods.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "foodCell", for: indexPath) as? FoodCellCollectionViewCell else {
             fatalError()
         }
-        cell.imageView.image = items[indexPath.item]
+        cell.imageView.image = foods[indexPath.item].image
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "selectedItem" {
             let destination = segue.destination as! FoodDetailViewController
-            destination.food = items[collectionView.indexPathsForSelectedItems![0].item]
+            destination.food = foods[collectionView.indexPathsForSelectedItems![0].item]
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: "filterBar",
+            for: indexPath
+        )
+        header.frame.size.height = 100
+        return header
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 100)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 100)
     }
 }

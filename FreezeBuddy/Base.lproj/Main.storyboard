@@ -30,14 +30,14 @@
         <scene sceneID="Aau-fe-6uD">
             <objects>
                 <collectionViewController id="RTJ-NT-VHq" customClass="FoodViewControler" customModule="FreezeBuddy" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="l8j-lP-QSe">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="l8j-lP-QSe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jc9-ge-Wwd">
                             <size key="itemSize" width="103" height="91"/>
                             <size key="headerReferenceSize" width="50" height="50"/>
-                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
@@ -65,12 +65,8 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DX3-lv-wLb">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filterBar" id="ggW-Q3-Eyv">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filterBar" id="ggW-Q3-Eyv">
-                            <rect key="frame" x="0.0" y="141" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-SO-zzd">
@@ -129,6 +125,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHB-HB-juy">
+                                <rect key="frame" x="63" y="274" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -136,6 +138,8 @@
                             <constraint firstItem="TV8-R6-gXk" firstAttribute="top" secondItem="7bm-eo-mGs" secondAttribute="bottom" constant="8" id="Rjm-ca-v0P"/>
                             <constraint firstItem="7bm-eo-mGs" firstAttribute="top" secondItem="X91-WK-sa5" secondAttribute="top" id="UpI-h5-hW4"/>
                             <constraint firstItem="7bm-eo-mGs" firstAttribute="centerX" secondItem="X91-WK-sa5" secondAttribute="centerX" id="aFe-lP-EAA"/>
+                            <constraint firstItem="NHB-HB-juy" firstAttribute="leading" secondItem="TV8-R6-gXk" secondAttribute="trailing" constant="8" id="jpR-LJ-5q8"/>
+                            <constraint firstItem="NHB-HB-juy" firstAttribute="centerY" secondItem="TV8-R6-gXk" secondAttribute="centerY" id="kKb-yF-ys6"/>
                             <constraint firstItem="7bm-eo-mGs" firstAttribute="width" secondItem="30D-ed-pwg" secondAttribute="width" id="p7W-4d-6NN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X91-WK-sa5"/>
@@ -143,6 +147,7 @@
                     <navigationItem key="navigationItem" title="Title" id="ylk-6j-Klr"/>
                     <connections>
                         <outlet property="imageView" destination="7bm-eo-mGs" id="5bD-QN-g6l"/>
+                        <outlet property="mhdValueLabel" destination="NHB-HB-juy" id="vvF-k8-Xo6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q4i-VJ-jpM" userLabel="First Responder" sceneMemberID="firstResponder"/>

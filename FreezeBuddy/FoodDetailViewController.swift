@@ -9,29 +9,27 @@
 import UIKit
 
 class FoodDetailViewController: UIViewController {
-    var food: UIImage! {
+    var food: Food! {
         didSet {
-            imageView?.image = food
+            applyFood()
         }
     }
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mhdValueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        imageView.image = food
+        applyFood()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func applyFood() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        
+        imageView?.image = food.image
+        mhdValueLabel?.text = formatter.string(from: food.mhd)
+        navigationItem.title = food.tags.first
     }
-    */
-
 }

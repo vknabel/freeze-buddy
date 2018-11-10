@@ -19,6 +19,7 @@
 		BA1A19A32196210200E9CFFF /* meat-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA1A19A22196210200E9CFFF /* meat-1.jpg */; };
 		BA1A19A5219624AB00E9CFFF /* FoodCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A19A4219624AA00E9CFFF /* FoodCellCollectionViewCell.swift */; };
 		BA1A19A72196288400E9CFFF /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A19A62196288400E9CFFF /* FoodDetailViewController.swift */; };
+		BA1A19A921962BBD00E9CFFF /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1A19A821962BBD00E9CFFF /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,9 @@
 		BA1A19A22196210200E9CFFF /* meat-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meat-1.jpg"; sourceTree = "<group>"; };
 		BA1A19A4219624AA00E9CFFF /* FoodCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		BA1A19A62196288400E9CFFF /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
+		BA1A19A821962BBD00E9CFFF /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		BA1A19AA2196302A00E9CFFF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		BA1A19AB2196302A00E9CFFF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,7 @@
 				BA1A19A021961FC600E9CFFF /* FoodViewController.swift */,
 				BA1A19A4219624AA00E9CFFF /* FoodCellCollectionViewCell.swift */,
 				BA1A19A62196288400E9CFFF /* FoodDetailViewController.swift */,
+				BA1A19A821962BBD00E9CFFF /* Food.swift */,
 				BA14496B21961B49008E1C8F /* Main.storyboard */,
 				BA14496E21961B4A008E1C8F /* Assets.xcassets */,
 				BA14497021961B4A008E1C8F /* LaunchScreen.storyboard */,
@@ -173,6 +178,7 @@
 				BA1A19A121961FC600E9CFFF /* FoodViewController.swift in Sources */,
 				BA1A19A72196288400E9CFFF /* FoodDetailViewController.swift in Sources */,
 				BA14496621961B49008E1C8F /* FreezeBuddy.xcdatamodeld in Sources */,
+				BA1A19A921962BBD00E9CFFF /* Food.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +189,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA14496C21961B49008E1C8F /* Base */,
+				BA1A19AA2196302A00E9CFFF /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -191,6 +198,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BA14497121961B4A008E1C8F /* Base */,
+				BA1A19AB2196302A00E9CFFF /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -263,6 +272,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
